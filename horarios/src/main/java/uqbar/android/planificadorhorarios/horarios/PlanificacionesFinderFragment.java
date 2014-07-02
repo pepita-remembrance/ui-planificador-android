@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.DatePicker;
 
 import uqbar.android.mvc.binding.ModelBinder;
 import uqbar.android.planificadorhorarios.horarios.models.BuscadorPlanificacionesModel;
@@ -28,6 +29,11 @@ public class PlanificacionesFinderFragment extends CustomFragment<MainActivity> 
     }
 
     public void search(){
+        DatePicker desde = (DatePicker)this.getView().findViewById(R.id.date_desde);
+        DatePicker hasta = (DatePicker)this.getView().findViewById(R.id.date_hasta);
+        model.setDesde(desde.getDayOfMonth(), desde.getMonth(), desde.getYear());
+        model.setHasta(hasta.getDayOfMonth(), hasta.getMonth(), hasta.getYear());
+
         this.getParentActivity().changeFragment(new PlanificacionesFragment().setBuscadorPlanificacionesModel(model));
     }
 }
