@@ -1,17 +1,14 @@
 package uqbar.android.planificadorhorarios.horarios;
 
-import android.app.Activity;
-
 import android.app.ActionBar;
+import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
 import android.support.v4.widget.DrawerLayout;
+import android.view.*;
+import com.octo.android.robospice.SpiceManager;
+import uqbar.android.planificadorhorarios.horarios.services.PlanificadorService;
 
 
 public class MainActivity extends Activity
@@ -29,6 +26,20 @@ public class MainActivity extends Activity
      */
     private CharSequence mTitle;
     private FragmentManager fragmentManager;
+
+    private SpiceManager spiceManager = new SpiceManager(PlanificadorService.class);
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        spiceManager.start(this);
+    }
+
+    @Override
+    protected void onStop() {
+        spiceManager.shouldStop();
+        super.onStop();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -115,6 +126,10 @@ public class MainActivity extends Activity
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    public SpiceManager getSpiceManager() {
+        return spiceManager;
     }
 
     /**

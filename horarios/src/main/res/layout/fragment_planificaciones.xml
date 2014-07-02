@@ -4,8 +4,12 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
+    <ListView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="PLANIFICACIONES ..."/>
+        android:layout_height="wrap_content"
+        android:id="@+id/planificacionesListView"
+        android:layout_gravity="right"
+        android:choiceMode="singleChoice"
+        android:textAlignment="textStart" />
+
 </LinearLayout>
