@@ -8,8 +8,9 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/riak_examples" />
-            <option value="$PROJECT_DIR$/riak_framework" />
+            <option value="$PROJECT_DIR$/fernetin_examples" />
+            <option value="$PROJECT_DIR$/fernetin_framework" />
+            <option value="$PROJECT_DIR$/horarios" />
           </set>
         </option>
       </GradleProjectSettings>
