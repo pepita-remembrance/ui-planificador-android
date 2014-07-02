@@ -92,10 +92,14 @@ public class MainActivity extends Activity
                 break;
         }
 
-        goToFragment(number);
+        goToFragment();
     }
 
-    private void goToFragment(int position) {
+    public void changeFragment(Fragment otherFragment){
+        fragment = otherFragment;
+        goToFragment();
+    }
+    private void goToFragment() {
         fragmentManager.beginTransaction()
                 .replace(R.id.content_frame, fragment)
                 .commit();
@@ -122,18 +126,6 @@ public class MainActivity extends Activity
             return true;
         }
         return super.onCreateOptionsMenu(menu);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-        if (id == R.id.action_settings) {
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
     }
 
     public SpiceManager getSpiceManager() {

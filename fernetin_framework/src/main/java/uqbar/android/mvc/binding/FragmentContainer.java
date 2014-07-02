@@ -11,10 +11,9 @@ public class FragmentContainer implements Container{
 		this.fragment = fragment;
 	}
 
-
     @Override
     public View findViewById(int id) {
-        return this.fragment.getActivity().findViewById(id);
+        return this.fragment.getView().findViewById(id);
     }
 
     @Override
