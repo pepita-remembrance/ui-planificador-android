@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <TextView
+        android:id="@+id/desde_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/date_desde"
+        android:layout_alignTop="@+id/date_desde"
+        android:layout_toLeftOf="@+id/date_desde"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:text="Desde"/>
+
+    <DatePicker
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:calendarViewShown="false"
+        android:id="@+id/date_desde" />
+
+    <TextView
+        android:id="@+id/hasta_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/date_desde"
+        android:layout_alignBottom="@+id/date_hasta"
+        android:layout_alignTop="@+id/date_hasta"
+        android:layout_toLeftOf="@+id/date_hasta"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:text="Hasta"/>
+
+    <DatePicker
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:calendarViewShown="false"
+        android:layout_below="@id/date_desde"
+        android:id="@+id/date_hasta" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/date_hasta"
+        android:text="BUSCAR"/>
+
+</RelativeLayout>

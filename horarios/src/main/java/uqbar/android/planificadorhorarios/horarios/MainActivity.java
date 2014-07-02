@@ -80,7 +80,7 @@ public class MainActivity extends Activity
                 break;
             case 3:
                 mTitle = getString(R.string.planificaciones);
-                fragment = new PlanificacionesFragment();
+                fragment = new PlanificacionesFinderFragment();
                 break;
         }
 
