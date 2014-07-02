@@ -34,6 +34,6 @@ public class PlanificacionesFinderFragment extends CustomFragment<MainActivity> 
         model.setDesde(desde.getDayOfMonth(), desde.getMonth(), desde.getYear());
         model.setHasta(hasta.getDayOfMonth(), hasta.getMonth(), hasta.getYear());
 
-        this.getParentActivity().changeFragment(new PlanificacionesFragment().setBuscadorPlanificacionesModel(model));
+        this.getParentActivity().changeFragment(new PlanificacionesFragment().setBuscador(model));
     }
 }
