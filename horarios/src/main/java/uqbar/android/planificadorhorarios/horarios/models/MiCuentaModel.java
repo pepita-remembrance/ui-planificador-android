@@ -17,6 +17,7 @@ public class MiCuentaModel extends ObservableObject {
     }
 
     public String getLegajo() {
+        if(legajoAsInt() == LEGAJO_NO_SETEADO) return "";
         return legajo;
     }
 
@@ -25,6 +26,11 @@ public class MiCuentaModel extends ObservableObject {
     }
 
     public void guardarLegajo(){
-        this.preferencesHandler.saveLegajo(Integer.parseInt(this.legajo));
+        this.preferencesHandler.saveLegajo(legajoAsInt());
+    }
+
+    private int legajoAsInt() {
+        if(this.legajo.isEmpty()) return LEGAJO_NO_SETEADO;
+        return Integer.parseInt(this.legajo);
     }
 }
