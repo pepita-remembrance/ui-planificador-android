@@ -1,1 +1,1 @@
-include ':fernetin_examples', ':fernetin_framework', ':horarios'
+include ':fernetin_framework', ':horarios'
