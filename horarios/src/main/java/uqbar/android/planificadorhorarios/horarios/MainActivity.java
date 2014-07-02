@@ -8,7 +8,10 @@ import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
 import android.view.*;
 import com.octo.android.robospice.SpiceManager;
+
+import uqbar.android.planificadorhorarios.horarios.models.MiCuentaModel;
 import uqbar.android.planificadorhorarios.horarios.services.PlanificadorService;
+import uqbar.android.planificadorhorarios.horarios.storage.SharedPreferencesHandler;
 
 
 public class MainActivity extends Activity
@@ -56,7 +59,12 @@ public class MainActivity extends Activity
                 (DrawerLayout) findViewById(R.id.drawer_layout));
 
         fragmentManager = getFragmentManager();
-        fragment = new AsignacionesFragment();
+
+        if(new SharedPreferencesHandler(this).retrieveLegajo() == MiCuentaModel.LEGAJO_NO_SETEADO){
+            fragment = new MiCuentaFragment();
+        } else {
+            fragment = new PlanificacionesFinderFragment();
+        }
     }
 
     @Override
