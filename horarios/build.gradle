@@ -23,4 +23,8 @@ dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     // You must install or update the Support Repository through the SDK manager to use this dependency.
     compile 'com.android.support:support-v4:19.+'
+    compile 'com.octo.android.robospice:robospice-retrofit:1.4.12'
+    compile 'com.octo.android.robospice:robospice-ui-spicelist:1.4.12'
+    compile 'com.octo.android.robospice:robospice-okhttp:1.4.12'
+    compile 'com.google.guava:guava:17.0'
 }
