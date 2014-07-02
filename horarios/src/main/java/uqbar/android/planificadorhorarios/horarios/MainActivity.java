@@ -60,10 +60,14 @@ public class MainActivity extends Activity
     public void onSectionAttached(int number) {
         switch (number) {
             case 1:
+                mTitle = getString(R.string.mi_cuenta);
+                fragment = new MiCuentaFragment();
+                break;
+            case 2:
                 mTitle = getString(R.string.asignaciones);
                 fragment = new AsignacionesFragment();
                 break;
-            case 2:
+            case 3:
                 mTitle = getString(R.string.planificaciones);
                 fragment = new PlanificacionesFragment();
                 break;
