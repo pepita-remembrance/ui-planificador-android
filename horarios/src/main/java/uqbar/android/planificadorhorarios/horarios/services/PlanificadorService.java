@@ -9,7 +9,7 @@ import java.lang.reflect.Type;
 import java.util.Date;
 
 public class PlanificadorService extends RetrofitGsonSpiceService {
-    private final static String BASE_URL = "http://192.168.0.6:9000";
+    private final static String BASE_URL = "http://192.168.150.1:9000";
 
     @Override
     public void onCreate() {
