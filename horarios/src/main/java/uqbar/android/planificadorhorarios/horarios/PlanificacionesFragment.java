@@ -15,7 +15,7 @@ import uqbar.android.ui.list.ItemSelectionListener;
 
 public class PlanificacionesFragment extends Fragment implements ItemSelectionListener<Planificacion> {
     private ListView planificacionesListView;
-    private BuscadorPlanificacion model = new BuscadorPlanificacion(((MainActivity) getActivity()).getSpiceManager());
+    private BuscadorPlanificacion model;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle bundle) {
@@ -25,6 +25,7 @@ public class PlanificacionesFragment extends Fragment implements ItemSelectionLi
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+        this.model = new BuscadorPlanificacion(((MainActivity) getActivity()).getSpiceManager());
         planificacionesListView = (ListView) getView().findViewById(R.id.planificacionesListView);
 
         new ModelBinder(this, model)
