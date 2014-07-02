@@ -9,6 +9,7 @@ import java.util.Date;
 public class Planificacion {
     public Date fecha;
     public boolean estaPlanificado;
+    public java.util.List<Empleado> empleados;
 
     public String getFechaUserFriendly() {
         return DateFormat.getDateInstance().format(fecha);
