@@ -10,12 +10,14 @@ import android.widget.Toast;
 import uqbar.android.mvc.binding.ModelBinder;
 import uqbar.android.planificadorhorarios.horarios.domain.BuscadorPlanificacion;
 import uqbar.android.planificadorhorarios.horarios.domain.Planificacion;
+import uqbar.android.planificadorhorarios.horarios.models.BuscadorPlanificacionesModel;
 import uqbar.android.ui.list.ItemListAdapter;
 import uqbar.android.ui.list.ItemSelectionListener;
 
 public class PlanificacionesFragment extends Fragment implements ItemSelectionListener<Planificacion> {
     private ListView planificacionesListView;
     private BuscadorPlanificacion model;
+    private BuscadorPlanificacionesModel buscadorPlanificacionesModel;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle bundle) {
@@ -42,5 +44,10 @@ public class PlanificacionesFragment extends Fragment implements ItemSelectionLi
     @Override
     public void onSelect(Planificacion item, View view) {
         Toast.makeText(getActivity(), item.getEstado(), Toast.LENGTH_SHORT).show();
+    }
+
+    public PlanificacionesFragment setBuscadorPlanificacionesModel(BuscadorPlanificacionesModel buscadorPlanificacionesModel) {
+        this.buscadorPlanificacionesModel = buscadorPlanificacionesModel;
+        return this;
     }
 }

@@ -28,6 +28,6 @@ public class PlanificacionesFinderFragment extends CustomFragment<MainActivity> 
     }
 
     public void search(){
-        this.getParentActivity().changeFragment(new PlanificacionesFragment());
+        this.getParentActivity().changeFragment(new PlanificacionesFragment().setBuscadorPlanificacionesModel(model));
     }
 }
