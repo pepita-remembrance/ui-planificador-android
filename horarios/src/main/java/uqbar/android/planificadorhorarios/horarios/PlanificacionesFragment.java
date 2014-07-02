@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import android.widget.ListView;
 import android.widget.Toast;
 import uqbar.android.mvc.binding.ModelBinder;
-import uqbar.android.planificadorhorarios.horarios.domain.BuscadorPlanificacion;
+import uqbar.android.planificadorhorarios.horarios.domain.ListadoPlanificacionModel;
 import uqbar.android.planificadorhorarios.horarios.domain.Planificacion;
 import uqbar.android.planificadorhorarios.horarios.models.BuscadorPlanificacionesModel;
 import uqbar.android.ui.list.ItemListAdapter;
@@ -16,8 +16,8 @@ import uqbar.android.ui.list.ItemSelectionListener;
 
 public class PlanificacionesFragment extends Fragment implements ItemSelectionListener<Planificacion> {
     private ListView planificacionesListView;
-    private BuscadorPlanificacion model;
-    private BuscadorPlanificacionesModel buscadorPlanificacionesModel;
+    private ListadoPlanificacionModel model;
+    private BuscadorPlanificacionesModel buscador;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle bundle) {
@@ -27,13 +27,13 @@ public class PlanificacionesFragment extends Fragment implements ItemSelectionLi
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        this.model = new BuscadorPlanificacion(((MainActivity) getActivity()).getSpiceManager());
+        this.model = new ListadoPlanificacionModel(((MainActivity) getActivity()).getSpiceManager());
         planificacionesListView = (ListView) getView().findViewById(R.id.planificacionesListView);
 
         new ModelBinder(this, model)
-            .when(BuscadorPlanificacion.Events.BusquedaFinalizada, "actualizarResultados");
+            .when(ListadoPlanificacionModel.Events.BusquedaFinalizada, "actualizarResultados");
 
-        model.buscar();
+        model.buscar(buscador.getDesde(), buscador.getHasta());
     }
 
     public void actualizarResultados() {
@@ -46,8 +46,8 @@ public class PlanificacionesFragment extends Fragment implements ItemSelectionLi
         Toast.makeText(getActivity(), item.getEstado(), Toast.LENGTH_SHORT).show();
     }
 
-    public PlanificacionesFragment setBuscadorPlanificacionesModel(BuscadorPlanificacionesModel buscadorPlanificacionesModel) {
-        this.buscadorPlanificacionesModel = buscadorPlanificacionesModel;
+    public PlanificacionesFragment setBuscador(BuscadorPlanificacionesModel buscador) {
+        this.buscador = buscador;
         return this;
     }
 }
