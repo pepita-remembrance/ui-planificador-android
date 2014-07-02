@@ -7,8 +7,6 @@
       <module fileurl="file://$PROJECT_DIR$/fernetin_examples/fernetin_examples.iml" filepath="$PROJECT_DIR$/fernetin_examples/fernetin_examples.iml" />
       <module fileurl="file://$PROJECT_DIR$/fernetin_framework/fernetin_framework.iml" filepath="$PROJECT_DIR$/fernetin_framework/fernetin_framework.iml" />
       <module fileurl="file://$PROJECT_DIR$/riak_examples/riak_examples.iml" filepath="$PROJECT_DIR$/riak_examples/riak_examples.iml" />
-      <module fileurl="file://$PROJECT_DIR$/riak_examples/riak_examples.iml" filepath="$PROJECT_DIR$/riak_examples/riak_examples.iml" />
-      <module fileurl="file://$PROJECT_DIR$/riak_framework/riak_framework.iml" filepath="$PROJECT_DIR$/riak_framework/riak_framework.iml" />
       <module fileurl="file://$PROJECT_DIR$/riak_framework/riak_framework.iml" filepath="$PROJECT_DIR$/riak_framework/riak_framework.iml" />
     </modules>
   </component>
