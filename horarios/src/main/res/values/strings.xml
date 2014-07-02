@@ -9,5 +9,8 @@
     <string name="action_example">Hola</string>
     <string name="action_settings">Settings</string>
     <string name="mi_cuenta">Mi Cuenta</string>
+    <string name="legajo">Legajo</string>
+    <string name="guardar">Guardar</string>
+    <string name="shared_preferences_cuenta">cuenta</string>
 
 </resources>

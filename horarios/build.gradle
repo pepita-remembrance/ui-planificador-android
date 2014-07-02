@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 19
-    buildToolsVersion "20.0.0"
+    buildToolsVersion '20.0.0'
 
     defaultConfig {
         applicationId "uqbar.android.planificadorhorarios.horarios"
@@ -17,14 +17,19 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    packagingOptions {
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+    }
 }
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     // You must install or update the Support Repository through the SDK manager to use this dependency.
-    compile 'com.android.support:support-v4:19.+'
     compile 'com.octo.android.robospice:robospice-retrofit:1.4.12'
     compile 'com.octo.android.robospice:robospice-ui-spicelist:1.4.12'
     compile 'com.octo.android.robospice:robospice-okhttp:1.4.12'
     compile 'com.google.guava:guava:17.0'
+    compile project(':fernetin_framework')
 }

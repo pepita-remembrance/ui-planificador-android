@@ -4,9 +4,17 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
+    <EditText
+        android:id="@+id/input_legajo"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="MI CUENTA ..."/>
+        android:layout_height="wrap_content"
+        android:hint="@string/legajo"
+        android:numeric="integer"/>
+
+    <Button
+        android:id="@+id/save_cuenta"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/guardar"/>
 
 </LinearLayout>

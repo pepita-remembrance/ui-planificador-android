@@ -5,6 +5,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 import android.app.Activity;
+import android.app.Fragment;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.CompoundButton;
@@ -17,7 +18,12 @@ public class ModelBinder {
 	private final ObservableObject model;
 	private final Set<Binding> bindings;
 
-	public ModelBinder(Activity activity, ObservableObject model) {
+	public ModelBinder(Fragment fragment, ObservableObject model) {
+		this(model);
+		this.container = new FragmentContainer(fragment);
+	}
+
+    public ModelBinder(Activity activity, ObservableObject model) {
 		this(model);
 		this.container = new ActivityContainer(activity);
 	}
